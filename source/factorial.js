@@ -15,7 +15,6 @@
  * @throws {Error} Если число отрицательное
  * @returns {Number} Факториал числа
  */
-
 const factorial = n => {
     if (n < 0) throw new Error('Факториал не определен для отрицательных чисел');
     
