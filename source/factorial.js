@@ -16,7 +16,7 @@
  * @returns {Number} Факториал числа
  */
 const factorial = n => {
-    if (n < 0) throw new Error('Факториал не определен для отрицательных чисел');
+    if (n < 0) throw new RangeError('Факториал не определен для отрицательных чисел');
     
     let result = 1;
     for (let i = 2; i <= n; i++) {
