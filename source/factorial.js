@@ -15,12 +15,18 @@
  * @throws {Error} Если число отрицательное
  * @returns {Number} Факториал числа
  */
+const factorialCache = new Map();
+
 const factorial = n => {
     if (n < 0) throw new RangeError('Факториал не определен для отрицательных чисел');
+    if (n === 0 || n === 1) return 1;
     
-    let result = 1;
-    for (let i = 2; i <= n; i++) {
-        result *= i;
+    if (factorialCache.has(n)) {
+        return factorialCache.get(n);
     }
+    
+    const result = n * factorial(n - 1);
+    factorialCache.set(n, result);
+    
     return result;
 };
